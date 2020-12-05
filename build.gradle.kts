@@ -1,5 +1,6 @@
 plugins {
     java
+    id("maven")
     kotlin("jvm") version "1.3.72"
     id("com.github.johnrengelman.shadow") version "6.1.0"
 }
