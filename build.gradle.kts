@@ -1,10 +1,11 @@
 plugins {
     java
     kotlin("jvm") version "1.3.72"
+    id("com.github.johnrengelman.shadow") version "6.1.0"
 }
 
 group = "com.thoo.api"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 
 repositories {
     mavenCentral()
