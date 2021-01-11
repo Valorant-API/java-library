@@ -4,13 +4,16 @@ import com.google.gson.*
 import com.thoo.api.models.*
 import com.thoo.api.services.ValorantApiService
 import com.thoo.api.utils.send
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.reflect.Modifier
 import java.lang.reflect.Type
 import java.math.BigDecimal
 
-class ValorantApi {
+class ValorantApi(
+    client: OkHttpClient = OkHttpClient()
+) {
 
     private val gson = GsonBuilder()
         .setPrettyPrinting()
@@ -23,6 +26,7 @@ class ValorantApi {
         }).create()
 
     private val retrofit: Retrofit = Retrofit.Builder()
+        .client(client)
         .baseUrl("https://valorant-api.com/v1/")
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
@@ -41,5 +45,6 @@ class ValorantApi {
     fun getThemes(): BaseModel<Array<Theme>> = service.themes().send()
     fun getTitles(): BaseModel<Array<Title>> = service.titles().send()
     fun getWeapons(): BaseModel<Array<Weapon>> = service.weapons().send()
+    fun getVersion(): BaseModel<Version> = service.version().send()
 
 }

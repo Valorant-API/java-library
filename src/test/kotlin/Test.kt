@@ -13,5 +13,6 @@ fun main(args: Array<String>) {
     val seasons = api.getSeasons()
     val themes = api.getThemes()
     val titles = api.getTitles()*/
-    val weapons = api.getWeapons()
+    val f = api.getVersion()
+    val status = api.getVersion()
 }

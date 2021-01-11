@@ -16,7 +16,7 @@ interface ValorantApiService {
     @GET("/v1/buddies")
     fun buddies(): Call<BaseModel<Array<Budy>>>
 
-    @GET("/v1/cards")
+    @GET("/v1/playercards")
     fun cards(): Call<BaseModel<Array<Card>>>
 
     @GET("/v1/contenttiers")
@@ -40,10 +40,13 @@ interface ValorantApiService {
     @GET("/v1/themes")
     fun themes(): Call<BaseModel<Array<Theme>>>
 
-    @GET("/v1/titles")
+    @GET("/v1/playertitles")
     fun titles(): Call<BaseModel<Array<Title>>>
 
     @GET("/v1/weapons")
     fun weapons(): Call<BaseModel<Array<Weapon>>>
+
+    @GET("/v1/version")
+    fun version(): Call<BaseModel<Version>>
 
 }
