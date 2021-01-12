@@ -5,5 +5,6 @@ class Budy(
      val displayName: String,
      val themeUuid: String?,
      val displayIcon: String,
-     val assetPath: String
+     val assetPath: String,
+     val isHiddenIfNotOwned: Boolean
 )
